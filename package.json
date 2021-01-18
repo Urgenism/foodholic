@@ -1,0 +1,65 @@
+{
+  "name": "foodholic",
+  "version": "1.0.0",
+  "description": "Foodholic",
+  "main": "index.js",
+  "scripts": {
+    "start": "gulp watch",
+    "build": "gulp"
+  },
+  "keywords": [
+    "Gulp",
+    "webpack",
+    "frontend",
+    "eslint",
+    "boilerplate",
+    "npm",
+    "node"
+  ],
+  "author": "Urgen Sherpa",
+  "license": "ISC",
+  "browserslist": {
+    "production": [
+      "last 1 version",
+      "> 1%",
+      "IE 10"
+    ],
+    "modern": [
+      "last 6 chrome version",
+      "last 6 firefox version",
+      "last 6 safari version",
+      "ie 10"
+    ],
+    "legacy": [
+      "defaults"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "autoprefixer": "^9.6.1",
+    "babel-loader": "^8.0.6",
+    "browser-sync": "^2.26.13",
+    "cssnano": "^4.1.10",
+    "del": "^4.1.1",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-clean-css": "^4.2.0",
+    "gulp-eslint": "^5.0.0",
+    "gulp-imagemin": "^5.0.3",
+    "gulp-newer": "^1.4.0",
+    "gulp-notify": "^3.2.0",
+    "gulp-plumber": "^1.2.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-purgecss": "^1.2.0",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.1.0",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2",
+    "webpack": "^4.40.2",
+    "webpack-stream": "^5.2.1"
+  },
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}

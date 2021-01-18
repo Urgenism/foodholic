@@ -1,0 +1,78 @@
+//BREAKPOINT-MIXINS
+$breakpoints: (
+        "phone":        400px,
+        "phone-wide":   480px,
+        "phablet":      560px,
+        "tablet-small": 640px,
+        "tablet":       768px,
+        "tablet-wide":  1024px,
+        "desktop":      1248px,
+        "desktop-wide": 1440px
+);
+
+@mixin mq($width, $type: min) {
+    @if map_has_key($breakpoints, $width) {
+        $width: map_get($breakpoints, $width);
+
+        @if $type==max {
+            $width: $width - 1px;
+        }
+
+        @media only screen and (#{$type}-width: $width) {
+            @content;
+        }
+    }
+}
+
+//Example
+//.example-header {
+//  padding: 20px;
+//  font-size: 16px;
+//  @include mq('tablet-wide') {
+//    padding-top: 30px;
+//    font-size: 22px;
+//  }
+//}
+
+// GRADIENT-MIXINS
+@mixin bg-gradient {
+    color: $primary;
+
+    @supports (background-clip: text) or (-webkit-background-clip: text) {
+        background-image: $linear-gradient-primary;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+
+
+// FLUID TYPOGRAPHY mixins@function strip-unit($value) {
+@function strip-unit($value) {
+    @return $value / ($value * 0 + 1);
+}
+
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+    $u1: unit($min-vw);
+    $u2: unit($max-vw);
+    $u3: unit($min-font-size);
+    $u4: unit($max-font-size);
+
+    @if $u1==$u2 and $u1==$u3 and $u1==$u4 {
+        & {
+            font-size: $min-font-size;
+
+            @media screen and (min-width: $min-vw) {
+                font-size: calc(#{$min-font-size} + #{strip-unit($max-font-size - $min-font-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
+            }
+
+            @media screen and (min-width: $max-vw) {
+                font-size: $max-font-size;
+            }
+        }
+    }
+}
+
+//Example
+// html {
+//     @include fluid-type($min_width, $max_width, $min_font, $max_font);
+//   }
