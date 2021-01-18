@@ -1,15 +1,192 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <link rel="stylesheet" href="assets/css/app.css" />
-    <title>Gulp and Webpack Boilerplate</title>
+    <title>Foodholic</title>
   </head>
-
   <body>
-    Hello world
+    <div class="main-wrapper">
+      <aside class="sidebar">
+        <div class="sidebar__top">
+          <h1 class="main-title">Foodholic</h1>
+          <nav class="sidebar__nav">
+            <ul class="sidebar__list">
+              <li class="sidebar__item">
+                <a href="#" class="sidebar__link">Home</a>
+              </li>
+              <li class="sidebar__item">
+                <a href="#" class="sidebar__link">Restaurants</a>
+              </li>
+              <li class="sidebar__item">
+                <a href="#" class="sidebar__link is-active"
+                  >My Cart <span class="sidebar__link-info">5 items</span></a
+                >
+              </li>
+              <li class="sidebar__item">
+                <a href="#" class="sidebar__link">History</a>
+              </li>
+              <li class="sidebar__item">
+                <a href="#" class="sidebar__link">Others</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+        <div class="sidebar__bottom">
+          <div class="support">
+            <img
+              src="./assets/img/abstract-business-code-270348.jpg"
+              alt="user image"
+              class="support__icon img-fluid"
+            />
+            <span class="support__name">Customer Support</span>
+          </div>
+          <div class="user">
+            <img
+              src="./assets/img/abstract-business-code-270348.jpg"
+              alt="user image"
+              class="user__img img-fluid"
+            />
+            <span class="user__name">Alex Ferguson</span>
+          </div>
+        </div>
+      </aside>
+      <main class="main-content">
+        <div class="row">
+          <div class="col-8">
+            <section class="added-items">
+              <h2 class="heading-primary">Added Items</h2>
+              <div class="added-items__wrapper">
+                <h3 class="heading-secondary">
+                  Order number <span class="color-black-light">#22540</span>
+                </h3>
+                <ul class="added-items__list">
+                  <li class="added-items__item">
+                    <div class="added-items__details">
+                      <img
+                        src="./assets/img/abstract-business-code-270348.jpg"
+                        alt="user image"
+                        class="added-items__img img-fluid"
+                      />
+                      <div class="added-items__info">
+                        <div class="added-items__head">
+                          <h6 class="added-items__title">
+                            Red N hot(Thin Crust Pizza)
+                          </h6>
+                          <div class="added-items__size">
+                            <span>L</span>
+                            <span>M</span>
+                          </div>
+                        </div>
+                        <div class="added-items__ingredients">
+                          <span>Red Sauce</span>
+                          <span>Ricotta</span>
+                          <span>Smoked Ham</span>
+                          <span>Garlic</span>
+                          <span>BBQ Sauce Drizzle</span>
+                        </div>
+                        <div class="added-items__amount">
+                          <span class="added-items__amount-num">$25</span>
+                          <button class="button button--ghost">Edit</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="added-items__quantity">
+                      <div class="added-items__quantity-detail">
+                        <span class="added-items__quantity-operator">-</span>
+                        <span class="added-items__quantity-num">2</span>
+                        <span class="added-items__quantity-operator">+</span>
+                      </div>
+                      <span class="added-items__quantity-label">Quantity</span>
+                    </div>
+                    <div class="added-items__price">
+                      <div class="added-items__price-number">$50.00</div>
+                      <div class="added-items__price-label">Subtotal</div>
+                    </div>
+                    <span class="added-items__cancel-button" role="button"
+                      >X</span
+                    >
+                  </li>
+                  <li class="added-items__item">
+                    <div class="added-items__details">
+                      <img
+                        src="./assets/img/abstract-business-code-270348.jpg"
+                        alt="user image"
+                        class="added-items__img img-fluid"
+                      />
+                      <div class="added-items__info">
+                        <div class="added-items__head">
+                          <h6 class="added-items__title">Chicken Burger</h6>
+                        </div>
+                        <div class="added-items__amount">
+                          <span class="added-items__amount-num">$15.09</span>
+                          <button class="button button--ghost">Edit</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="added-items__quantity">
+                      <div class="added-items__quantity-detail">
+                        <span class="added-items__quantity-operator">-</span>
+                        <span class="added-items__quantity-num">2</span>
+                        <span class="added-items__quantity-operator">+</span>
+                      </div>
+                      <span class="added-items__quantity-label">Quantity</span>
+                    </div>
+                    <div class="added-items__price">
+                      <div class="added-items__price-number">$30.18</div>
+                      <div class="added-items__price-label">Subtotal</div>
+                    </div>
+                    <span class="added-items__cancel-button" role="button"
+                      >X</span
+                    >
+                  </li>
+                  <li class="added-items__item">
+                    <div class="added-items__details">
+                      <img
+                        src="./assets/img/abstract-business-code-270348.jpg"
+                        alt="user image"
+                        class="added-items__img img-fluid"
+                      />
+                      <div class="added-items__info">
+                        <div class="added-items__head">
+                          <h6 class="added-items__title">
+                            Cheesy Veg sandwich
+                          </h6>
+                        </div>
+                        <div class="added-items__amount">
+                          <span class="added-items__amount-num">$52.99</span>
+                          <button class="button button--ghost">Edit</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="added-items__quantity">
+                      <div class="added-items__quantity-detail">
+                        <span class="added-items__quantity-operator">-</span>
+                        <span class="added-items__quantity-num">1</span>
+                        <span class="added-items__quantity-operator">+</span>
+                      </div>
+                      <span class="added-items__quantity-label">Quantity</span>
+                    </div>
+                    <div class="added-items__price">
+                      <div class="added-items__price-number">$52.99</div>
+                      <div class="added-items__price-label">Subtotal</div>
+                    </div>
+                    <span class="added-items__cancel-button" role="button"
+                      >X</span
+                    >
+                  </li>
+                </ul>
+                <button class="button button--full button--gray">
+                  + &nbsp; Add more items
+                </button>
+              </div>
+            </section>
+          </div>
+          <div class="col-4">col5</div>
+        </div>
+      </main>
+    </div>
     <script src="assets/js/app.js"></script>
   </body>
 </html>

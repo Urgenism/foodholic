@@ -1,0 +1,23 @@
+.button {
+  display: inline-block;
+  padding: 0.8rem 1.6rem;
+
+  &--ghost {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
+  &--full {
+    display: block;
+    width: 100%;
+  }
+
+  &--gray {
+    background-color: $color-gray-3;
+    color: $color-primary;
+    border: 2px dashed $color-gray-2;
+    padding: 0.4rem 1.6rem;
+  }
+}

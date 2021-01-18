@@ -1,0 +1,85 @@
+.sidebar {
+  background-color: $color-primary-lighter;
+  flex: 0 0 220px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.4rem 0 0;
+
+  &__nav {}
+
+  &__list {}
+
+  &__item {}
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    color: $color-black;
+    font-weight: bold;
+    padding: 0.8rem 2rem;
+
+    &.is-active {
+      background-color: rgba($color-primary-light, 0.6);
+      color: $color-primary;
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: 15%;
+        left: 0;
+        height: 70%;
+        width: 0.4rem;
+        background-color: $color-primary;
+      }
+    }
+
+    &:hover {
+      color: $color-primary;
+      background-color: rgba($color-primary-light, 0.6);
+    }
+  }
+
+  &__link-info {
+    font-weight: normal;
+    font-size: 1.2rem;
+  }
+}
+
+
+.support {
+  padding: 1.2rem;
+  margin-bottom: 2.4rem;
+
+  &__icon {
+    width: 1.6rem;
+  }
+
+  &__name {
+    display: inline-block;
+    vertical-align: middle;
+    margin-left: 0.8rem;
+    font-size: 1.6rem;
+    font-weight: bold;
+  }
+}
+
+.user {
+  background-color: $color-primary-light;
+  padding: 1.2rem 2rem;
+  border-top-left-radius: 1.2rem;
+
+  &__img {
+    height: 2.4rem;
+    width: 2.4rem;
+    border-radius: 50%;
+  }
+
+  &__name {
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 0 0 0.8rem;
+    font-weight: bold;
+  }
+}

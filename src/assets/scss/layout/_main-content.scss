@@ -1,0 +1,11 @@
+.main-wrapper {
+  display: flex;
+  padding: 1rem 2rem;
+  height: 100%;
+}
+
+.main-content {
+  background: $color-white;
+  flex: 1 1 100%;
+  padding: 2rem 3.2rem;
+}
