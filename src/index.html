@@ -62,8 +62,8 @@
                 <h3 class="heading-secondary">
                   Order number <span class="color-black-light">#22540</span>
                 </h3>
-                <ul class="added-items__list">
-                  <li class="added-items__item">
+                <ul class="added-items__list" id="js-addedItemsList">
+                  <!-- <li class="added-items__item">
                     <div class="added-items__details">
                       <img
                         src="./assets/img/abstract-business-code-270348.jpg"
@@ -176,7 +176,7 @@
                     <span class="added-items__cancel-button" role="button"
                       >X</span
                     >
-                  </li>
+                  </li> -->
                 </ul>
                 <div class="coupon">
                   <span class="coupon__label">
@@ -188,7 +188,12 @@
                   >
                   <span class="coupon__code">QCVB7R9</span>
                 </div>
-                <button class="button button--full button--gray">
+                <button
+                  class="button button--full button--gray"
+                  id="js-addMoreItemBtn"
+                  data-toggle="modal"
+                  data-target="#item-modal"
+                >
                   + &nbsp; Add more items
                 </button>
               </div>
@@ -416,18 +421,44 @@
                   </div>
                   <ul class="payment__list">
                     <li class="payment__item">
-                      <img
-                        src="./assets/img/abstract-business-code-270348.jpg"
-                        alt="user image"
-                        class="payment__icon img-fluid"
-                      />Credit card
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="payment-method"
+                          id="credit-card"
+                          value="option1"
+                          checked
+                        />
+                        <label class="form-check-label ml-3" for="credit-card">
+                          <img
+                            src="./assets/img/abstract-business-code-270348.jpg"
+                            alt="user image"
+                            class="payment__icon img-fluid"
+                          />
+                          Credit card
+                        </label>
+                      </div>
                     </li>
                     <li class="payment__item">
-                      <img
-                        src="./assets/img/abstract-business-code-270348.jpg"
-                        alt="user image"
-                        class="img-fluid payment__icon"
-                      />Paypal
+                      <div class="form-check">
+                        <input
+                          class="form-check-input"
+                          type="radio"
+                          name="payment-method"
+                          id="paypal"
+                          value="option1"
+                          checked
+                        />
+                        <label class="form-check-label ml-3" for="paypal">
+                          <img
+                            src="./assets/img/abstract-business-code-270348.jpg"
+                            alt="user image"
+                            class="payment__icon img-fluid"
+                          />
+                          Paypal
+                        </label>
+                      </div>
                     </li>
                   </ul>
                 </section>
@@ -459,15 +490,21 @@
                   <ul class="amount__list">
                     <li class="amount__item">
                       <span>Sub Total</span>
-                      <span class="amount__item-num">$133.17</span>
+                      <span class="amount__item-num" id="js-subTotal"
+                        >$133.17</span
+                      >
                     </li>
                     <li class="amount__item">
                       <span>Delivery Charge</span>
-                      <span class="amount__item-num">$15.00</span>
+                      <span class="amount__item-num" id="js-deliveryCharge"
+                        >$15.00</span
+                      >
                     </li>
                     <li class="amount__item">
                       <span>Coupon applied</span>
-                      <span class="amount__item-num">-$10.00</span>
+                      <span class="amount__item-num" id="js-couponApplied"
+                        >-$10.00</span
+                      >
                     </li>
                   </ul>
                   <div class="amount__grand-total">
@@ -476,7 +513,9 @@
                         >(+VAT)</span
                       ></span
                     >
-                    <span class="amount__grand-total-value">$128.17</span>
+                    <span class="amount__grand-total-value" id="js-grandTotal"
+                      >$128.17</span
+                    >
                   </div>
                 </section>
 
@@ -493,6 +532,90 @@
         </div>
       </main>
     </div>
+
+    <!-- MODAL -->
+    <div class="modal" tabindex="-1" id="item-modal">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h3 class="heading-secondary">Items</h3>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="col-4">
+                <div class="form-group">
+                  <label for="js-foodSelect">Food</label>
+                  <select class="custom-select mr-sm-2" id="js-modalFoodSelect">
+                    <option value="choose" selected>Choose food</option>
+                    <option value="1">Red N hot(Thin Crust Pizza)</option>
+                    <option value="2">Chicken Burger</option>
+                    <option value="3">Cheesy Veg sandwich</option>
+                  </select>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group text-center">
+                  <label for="">Quantity</label>
+                  <div class="added-items__quantity-detail">
+                    <span
+                      class="added-items__quantity-operator"
+                      id="js-minusOperator"
+                      >-</span
+                    >
+                    <span
+                      class="added-items__quantity-num"
+                      id="js-modalQuantity"
+                      >1</span
+                    >
+                    <span
+                      class="added-items__quantity-operator"
+                      id="js-plusOperator"
+                      >+</span
+                    >
+                  </div>
+                </div>
+              </div>
+              <div class="col-4">
+                <div class="form-group text-center">
+                  <label for="">SubTotal</label>
+                  <div
+                    class="font-weight-bold font-size-16"
+                    id="js-modalSubTotal"
+                  >
+                    $0.00
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="button button--gray-2 button--md"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+            <button
+              type="button"
+              class="button button--primary-light button--md"
+              id="js-addItem"
+            >
+              Add
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="assets/js/vendor.js"></script> -->
     <script src="assets/js/app.js"></script>
   </body>
 </html>

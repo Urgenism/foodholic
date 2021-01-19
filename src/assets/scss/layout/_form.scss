@@ -1,0 +1,16 @@
+.form-control {
+
+  &--text {
+    background: white;
+    display: inline-block;
+    border: none;
+    text-align: center;
+    font-size: inherit;
+    padding: 0;
+    height: auto;
+  }
+}
+
+.custom-select {
+  font-size: 1.4rem;
+}
