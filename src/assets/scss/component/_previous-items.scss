@@ -1,0 +1,144 @@
+.previous-items {
+  margin: 3.2rem 0 0;
+
+  &__list {
+    margin-top: 2.4rem;
+  }
+
+  &__item {
+    &:not(:last-child) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  &-card {
+    font-weight: bold;
+    border-radius: 1.6rem;
+    overflow: hidden;
+    box-shadow: 0 4px 10px 0 rgba($color-black, 0.1);
+
+    &__row {
+      margin: 0 -2.8rem;
+
+
+      &>[class^="col"] {
+        padding: 0 2.8rem;
+      }
+    }
+
+    &__header {
+      background-color: $color-primary-light;
+      padding: 1.2rem 2.4rem;
+      font-size: 1.8rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    &__header-left {}
+
+    &__header-right {
+      flex: 0 1 20%;
+      text-align: left;
+    }
+
+    &__title {
+      margin: 0;
+      line-height: 1;
+      font-size: inherit;
+    }
+
+    &__date {
+      color: $color-black-light;
+      font-size: 1.2rem;
+    }
+
+    &__amount {}
+
+    &__body {
+      margin: 1.6rem 0 0;
+      padding: 1.2rem 2.4rem 1.2rem 4.6rem;
+    }
+
+    &__label-wrap {
+      display: flex;
+      justify-content: space-between;
+    }
+
+    &__label {
+      color: $color-black-light;
+      font-size: 1.2rem;
+      margin-bottom: 0.4rem;
+
+      &--lg {
+        font-size: 1.4rem;
+      }
+    }
+
+    &__value {
+      font-weight: bold;
+
+      &--lg {
+        font-size: 1.6rem;
+      }
+    }
+
+    &__list {
+      position: relative;
+
+      &:before {
+        content: '';
+        position: absolute;
+        top: 15%;
+        left: -1.6rem;
+        height: 80%;
+        border-left: 2px dashed $color-gray-2;
+      }
+    }
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      z-index: 10;
+
+      &:before {
+        content: '';
+        position: absolute;
+        background-color: $color-white;
+        z-index: 10;
+        top: 35%;
+        left: -2rem;
+        width: 1rem;
+        height: 0.9rem;
+        border-radius: 50%;
+        border: 2px solid $color-gray-2;
+
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 0.6rem;
+      }
+    }
+
+    &__item &__value {
+      margin-right: 1rem;
+    }
+
+    &__total {
+      text-align: center;
+      position: relative;
+      margin: 1rem;
+
+      &:before {
+        content: "";
+        position: absolute;
+        top: -10%;
+        left: -2rem;
+        background-color: $color-gray-2;
+        height: 120%;
+        width: 1px;
+      }
+    }
+  }
+}

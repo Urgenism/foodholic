@@ -22,7 +22,7 @@
   &__details {
     display: flex;
     align-items: flex-start;
-    flex: 0 1 63%;
+    flex: 0 0 60%;
   }
 
 
@@ -84,7 +84,7 @@
 
   &__quantity {
     text-align: center;
-    flex: 0 0 9rem;
+    flex: 0 0 15%;
 
     &-detail {
       font-weight: bold;
@@ -114,7 +114,7 @@
 
   &__price {
     text-align: center;
-    flex: 0 0 7rem;
+    flex: 0 0 15%;
 
     &-number {
       font-weight: bold;
@@ -128,5 +128,30 @@
 
   &__cancel-button {
     color: $color-black-light;
+  }
+}
+
+.coupon {
+  margin: 3.2rem 0 2.4rem 0;
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &__label {
+    flex: 0 0 auto;
+  }
+
+  &__icon {
+    width: 2.4rem;
+    margin-right: 1.6rem;
+  }
+
+  &__code {
+    flex: 0 0 35%;
+    color: $color-primary;
+    background-color: $color-primary-lighter;
+    padding: 0.4rem 1.6rem;
   }
 }

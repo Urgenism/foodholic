@@ -20,4 +20,29 @@
     border: 2px dashed $color-gray-2;
     padding: 0.4rem 1.6rem;
   }
+
+  &--primary-light {
+    background-color: rgba($color-primary-light, 0.7);
+    color: $color-primary;
+    font-size: 1.2rem;
+    border: none;
+    padding: 0.4rem 0.8rem;
+  }
+
+  &--primary {
+    background-color: $primary;
+    color: $color-white;
+    border: none;
+    border-radius: 1rem;
+    font-weight: bold;
+  }
+
+  &--full-width {
+    display: block;
+    width: 100%;
+  }
+
+  &--large {
+    padding: 1.6rem;
+  }
 }
